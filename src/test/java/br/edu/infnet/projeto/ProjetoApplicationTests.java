@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ProjetoApplicationTests {
 
 	@Test
-	void teste01() {
+	void testeIniciarApp() {
 		ProjetoApplication.main(new String[] {"Espois"});
 	}
 
