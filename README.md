@@ -1,5 +1,7 @@
 # Delícias da Zezé
 Sistema de Controle de Pedidos da empresa Delícias da Zezé
 
-- github.com/aespois/delicias-da-zeze
-- instagram.com/deliicias_da_zeze
+- Classes: drive.google.com/file/d/1R3I2kTlWmz8NB1EOz3FW2fFBdW2pybJH
+- GIT: github.com/aespois/delicias-da-zeze
+- Cliente: instagram.com/deliicias_da_zeze
+
