@@ -6,14 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
+import br.edu.infnet.projeto.model.exception.TamanhoInvalidoException;
 
 @SpringBootTest
 public class EmpadasTeste {
-	// tamanho e recheio
+
 	@Test
-	//void testaInstanciaToString() throws MedidaInvalidaException {
-	void testaInstanciaToString() {
+	void testaInstanciaToString() throws TamanhoInvalidoException {
 		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
@@ -22,8 +21,7 @@ public class EmpadasTeste {
 	}
 	
 	@Test
-	//void testaCalculoValor() throws MedidaInvalidaException {
-	void testaCalculoValor() {
+	void testaCalculoValor() throws TamanhoInvalidoException {
 		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
@@ -32,20 +30,18 @@ public class EmpadasTeste {
 	}
 	
 	@Test
-	void testaMedidaInvalida() {
-		//try {
-			//Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
-			//empadas.setTamanho("G");
-			//empadas.setRecheio("Frango");
-			
-		//} catch (MedidaInvalidaException e) {
-			//assertEquals("Medida inválida.", e.getMessage());
-		//}
+	void testaTamanhoInvalido() {
+		try {
+			Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+			empadas.setTamanho("Grande");
+			empadas.setRecheio("Frango");
+		} catch (TamanhoInvalidoException e) {
+			assertEquals("Tamanho Inválido", e.getMessage());
+		}
 	}
 	
 	@Test
-	//void testaObterValorPorProduto() throws MedidaInvalidaException {
-	void testaObterValorPorProduto() {
+	void testaObterValorPorProduto() throws TamanhoInvalidoException {
 		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");

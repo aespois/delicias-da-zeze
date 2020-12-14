@@ -1,6 +1,6 @@
 package br.edu.infnet.projeto.model.negocio;
 
-// import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
+import br.edu.infnet.projeto.model.exception.TamanhoInvalidoException;
 
 public class Empadas extends Produto {
 	private String tamanho; // P, M ou G
@@ -37,7 +37,10 @@ public class Empadas extends Produto {
 		return tamanho;
 	}
 	
-	public void setTamanho(String tamanho) {	
+	public void setTamanho(String tamanho) throws TamanhoInvalidoException {
+		if(tamanho.length() > 1) {
+			throw new TamanhoInvalidoException("Tamanho Inválido");
+		}
 		this.tamanho = tamanho;
 	}
 	
@@ -45,13 +48,7 @@ public class Empadas extends Produto {
 		return recheio;
 	}
 	
-	//public void setMedida(float medida) throws MedidaInvalidaException {
-	public void setRecheio(String recheio) {
-		
-		//if(medida <= 0) {
-		//	throw new MedidaInvalidaException("Medida inválida.");
-		//}
-		
+	public void setRecheio(String recheio) {	
 		this.recheio = recheio;
 	}
 }

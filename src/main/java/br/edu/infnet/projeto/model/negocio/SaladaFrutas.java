@@ -1,7 +1,5 @@
 package br.edu.infnet.projeto.model.negocio;
 
-//import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
-
 public class SaladaFrutas extends Produto {
 	private boolean mel; // S ou N
 	private String retirarFruta; // banana, uva, manga, morango, mamão
@@ -39,12 +37,7 @@ public class SaladaFrutas extends Produto {
 		return retirarFruta;
 	}
 	
-	//public void setMedida(float medida) throws MedidaInvalidaException {
 	public void setRetirarFruta(String retirarFruta) {
-		
-		//if(medida <= 0) {
-		//	throw new MedidaInvalidaException("Medida inválida.");
-		//}
 		this.retirarFruta = retirarFruta;
 	}
 }

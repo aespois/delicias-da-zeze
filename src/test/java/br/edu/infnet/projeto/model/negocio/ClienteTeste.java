@@ -25,5 +25,4 @@ public class ClienteTeste {
 
 		assertTrue("Ana;Jaconé;98856-1486".equals(s.toString()));
 	}
-
 }

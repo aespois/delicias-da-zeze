@@ -6,13 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
+import br.edu.infnet.projeto.model.exception.TipoInvalidoException;
 
 @SpringBootTest
 public class TortasTeste {
 	@Test
-	//void testaInstanciaToString() throws MedidaInvalidaException {
-	void testaInstanciaToString() {
+	void testaInstanciaToString() throws TipoInvalidoException {
 		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
 		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");
@@ -21,8 +20,7 @@ public class TortasTeste {
 	}
 	
 	@Test
-	//void testaCalculoValor() throws MedidaInvalidaException {
-	void testaCalculoValor() {
+	void testaCalculoValor() throws TipoInvalidoException {
 		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
 		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");
@@ -31,20 +29,19 @@ public class TortasTeste {
 	}
 	
 	@Test
-	void testaMedidaInvalida() {
-		//try {
+	void testaTipoInvalido() {
+		try {
 			Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
-			tortas.setTipo("M");
+			tortas.setTipo("Médio");
 			tortas.setSabor("Brigadeiro");
 			
-		//} catch (MedidaInvalidaException e) {
-			//assertEquals("Medida inválida.", e.getMessage());
-		//}
+		} catch (TipoInvalidoException e) {
+			assertEquals("Tipo Inválido", e.getMessage());
+		}
 	}
 	
 	@Test
-	//void testaObterValorPorProduto() throws MedidaInvalidaException {
-	void testaObterValorPorProduto() {
+	void testaObterValorPorProduto() throws TipoInvalidoException {
 		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
 		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");

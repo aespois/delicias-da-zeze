@@ -1,6 +1,6 @@
 package br.edu.infnet.projeto.model.negocio;
 
-//import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
+import br.edu.infnet.projeto.model.exception.TipoInvalidoException;
 
 public class Tortas extends Produto {
 	private String tipo; // Fatia=P, Tortinha=M ou Torta=G
@@ -42,13 +42,10 @@ public class Tortas extends Produto {
 		return tipo;
 	}
 	
-	//public void setMedida(float medida) throws MedidaInvalidaException {
-	public void setTipo(String tipo) {
-		
-		//if(medida <= 0) {
-		//	throw new MedidaInvalidaException("Medida inválida.");
-		//}
-		
+	public void setTipo(String tipo) throws TipoInvalidoException {
+		if(tipo.length() > 1) {
+			throw new TipoInvalidoException("Tipo Inválido");
+		}
 		this.tipo = tipo;
 	}
 	
