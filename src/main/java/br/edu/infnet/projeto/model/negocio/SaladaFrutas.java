@@ -15,29 +15,23 @@ public class SaladaFrutas extends Produto {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append(";");
-		sb.append(this.getMel());
+		sb.append(this.isMel());
 		sb.append(";");
 		sb.append(this.getRetirarFruta());
 		
 		return sb.toString();
 	}
 
-	//@Override
-	//public float calcularValorVenda() {
-	//	return this.getValor() + (this.isProducaoPropria() ? 2 : 0) + this.getMedida() * 0.02f;
-	//}
+	@Override
+	public float calcularValorVenda() { // + R$ 2 
+		return this.getValorUnitario() + (this.isMel() ? +2.0f : 0);
+	}
 
-	public boolean getMel() {
+	public boolean isMel() {
 		return mel;
 	}
 	
-	//public void setMedida(float medida) throws MedidaInvalidaException {
 	public void setMel(boolean mel) {
-		
-		//if(medida <= 0) {
-		//	throw new MedidaInvalidaException("Medida inválida.");
-		//}
-		
 		this.mel = mel;
 	}
 	
@@ -45,7 +39,12 @@ public class SaladaFrutas extends Produto {
 		return retirarFruta;
 	}
 	
+	//public void setMedida(float medida) throws MedidaInvalidaException {
 	public void setRetirarFruta(String retirarFruta) {
+		
+		//if(medida <= 0) {
+		//	throw new MedidaInvalidaException("Medida inválida.");
+		//}
 		this.retirarFruta = retirarFruta;
 	}
 }

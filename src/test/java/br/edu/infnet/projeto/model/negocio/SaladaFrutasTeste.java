@@ -1,6 +1,6 @@
 package br.edu.infnet.projeto.model.negocio;
 
-//import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ public class SaladaFrutasTeste {
 		saladaFrutas.setMel(Boolean.TRUE);
 		saladaFrutas.setRetirarFruta("Banana");
 		
-		//assertEquals(saladaFrutas.calcularValorVenda(), 11);
+		assertEquals(saladaFrutas.calcularValorVenda(), 7);
 	}
 	
 	@Test
@@ -50,8 +50,8 @@ public class SaladaFrutasTeste {
 		saladaFrutas.setMel(Boolean.TRUE);
 		saladaFrutas.setRetirarFruta("Banana");
 		
-		//String result = "suco;11.0\r";
+		String result = "Salada de Frutas;7.0\r";
 		
-		//assertEquals(saladaFrutas.obterValorPorProduto(), result);
+		assertEquals(saladaFrutas.obterValorPorProduto(), result);
 	}
 }

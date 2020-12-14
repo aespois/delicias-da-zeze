@@ -3,7 +3,7 @@ package br.edu.infnet.projeto.model.negocio;
 //import br.edu.infnet.appLanchonete.model.exception.MedidaInvalidaException;
 
 public class Tortas extends Produto {
-	private String tipo; // Fatia, Tortinha ou TortaInteira
+	private String tipo; // Fatia, Tortinha ou Torta
 	private String sabor; // brigadeiro, chocolate a 4 leites, chocolate com amendoim, chocolate com doce de leite, abacaxi com côco, doce de leite com ameixa, morango
 	
 	public Tortas(String nome, String descricao, float valorUnitario) {
@@ -22,10 +22,16 @@ public class Tortas extends Produto {
 		return sb.toString();
 	}
 
-	//@Override
-	//public float calcularValorVenda() {
-	//	return this.getValor() + (this.isProducaoPropria() ? 2 : 0) + this.getMedida() * 0.02f;
-	//}
+	@Override
+	public float calcularValorVenda() {
+		if (this.getTipo() == "Fatia") { // sem adição de valor
+			return this.getValorUnitario();
+		} else if (this.getTipo() == "Tortinha") { // + R$ 5
+			return this.getValorUnitario() + 5.02f;
+		} else { // + R$ 50
+			return this.getValorUnitario() + 10.02f;
+		}
+	}
 
 	public String getTipo() {
 		return tipo;

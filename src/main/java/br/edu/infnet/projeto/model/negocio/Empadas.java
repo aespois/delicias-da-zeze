@@ -22,22 +22,22 @@ public class Empadas extends Produto {
 		return sb.toString();
 	}
 
-	//@Override
-	//public float calcularValorVenda() {
-	//	return this.getValor() + (this.isProducaoPropria() ? 2 : 0) + this.getMedida() * 0.02f;
-	//}
+	@Override
+	public float calcularValorVenda() { 
+		if (this.getTamanho() == "P") { // sem adição de valor
+			return this.getValorUnitario();
+		} else if (this.getTamanho() == "M") { // + R$ 5
+			return this.getValorUnitario() + 5.0f;
+		} else { // + R$ 10
+			return this.getValorUnitario() + 10.0f;
+		}
+	}
 
 	public String getTamanho() {
 		return tamanho;
 	}
 	
-	//public void setMedida(float medida) throws MedidaInvalidaException {
-	public void setTamanho(String tamanho) {
-		
-		//if(medida <= 0) {
-		//	throw new MedidaInvalidaException("Medida inválida.");
-		//}
-		
+	public void setTamanho(String tamanho) {	
 		this.tamanho = tamanho;
 	}
 	
@@ -45,7 +45,13 @@ public class Empadas extends Produto {
 		return recheio;
 	}
 	
+	//public void setMedida(float medida) throws MedidaInvalidaException {
 	public void setRecheio(String recheio) {
+		
+		//if(medida <= 0) {
+		//	throw new MedidaInvalidaException("Medida inválida.");
+		//}
+		
 		this.recheio = recheio;
 	}
 }

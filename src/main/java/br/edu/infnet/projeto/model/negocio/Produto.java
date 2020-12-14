@@ -12,17 +12,17 @@ public abstract class Produto {
 		this.valorUnitario = valorUnitario;
 	}
 
-	//public abstract float calcularValorVenda();
+	public abstract float calcularValorVenda();
 	
-	//public String obterValorPorProduto() {
-	//	StringBuilder sb = new StringBuilder();
-	//	sb.append(this.getDescricao());
-	//	sb.append(";");
-	//	sb.append(this.calcularValorVenda());
-	//	sb.append("\r");
+	public String obterValorPorProduto() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.getNome());
+		sb.append(";");
+		sb.append(this.calcularValorVenda());
+		sb.append("\r");
 		
-	//	return sb.toString();
-	//}
+		return sb.toString();
+	}
 	
 	@Override
 	public String toString() {

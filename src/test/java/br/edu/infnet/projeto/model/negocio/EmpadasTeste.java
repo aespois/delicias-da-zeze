@@ -1,6 +1,6 @@
 package br.edu.infnet.projeto.model.negocio;
 
-//import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -14,29 +14,29 @@ public class EmpadasTeste {
 	@Test
 	//void testaInstanciaToString() throws MedidaInvalidaException {
 	void testaInstanciaToString() {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 15);
+		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		
-		assertTrue("Empadão;Empadão com recheio de frango;15.0;G;Frango".equals(empadas.toString()));		
+		assertTrue("Empadão;Empadão com recheio de frango;5.0;G;Frango".equals(empadas.toString()));		
 	}
 	
 	@Test
 	//void testaCalculoValor() throws MedidaInvalidaException {
 	void testaCalculoValor() {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 15);
+		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		
-		//assertEquals(empadas.calcularValorVenda(), 11);
+		assertEquals(empadas.calcularValorVenda(), 15);
 	}
 	
 	@Test
 	void testaMedidaInvalida() {
 		//try {
-			Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 15);
-			empadas.setTamanho("G");
-			empadas.setRecheio("Frango");
+			//Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+			//empadas.setTamanho("G");
+			//empadas.setRecheio("Frango");
 			
 		//} catch (MedidaInvalidaException e) {
 			//assertEquals("Medida inválida.", e.getMessage());
@@ -46,12 +46,12 @@ public class EmpadasTeste {
 	@Test
 	//void testaObterValorPorProduto() throws MedidaInvalidaException {
 	void testaObterValorPorProduto() {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 15);
+		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		
-		//String result = "suco;11.0\r";
+		String result = "Empadão;15.0\r";
 		
-		//assertEquals(empadas.obterValorPorProduto(), result);
+		assertEquals(empadas.obterValorPorProduto(), result);
 	}
 }
