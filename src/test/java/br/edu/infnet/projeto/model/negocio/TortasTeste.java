@@ -13,28 +13,28 @@ public class TortasTeste {
 	@Test
 	//void testaInstanciaToString() throws MedidaInvalidaException {
 	void testaInstanciaToString() {
-		Tortas tortas = new Tortas("Fatia", "Fatia de Torta de Brigadeiro", 7);
-		tortas.setTipo("Fatia");
+		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
+		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");
 		
-		assertTrue("Fatia;Fatia de Torta de Brigadeiro;7.0;Fatia;Brigadeiro".equals(tortas.toString()));		
+		assertTrue("Tortinha;Torta pequena de Brigadeiro;7.0;M;Brigadeiro".equals(tortas.toString()));		
 	}
 	
 	@Test
 	//void testaCalculoValor() throws MedidaInvalidaException {
 	void testaCalculoValor() {
-		Tortas tortas = new Tortas("Fatia", "Fatia de Torta de Brigadeiro", 7);
-		tortas.setTipo("Fatia");
+		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
+		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");
 		
-		assertEquals(tortas.calcularValorVenda(), 7);
+		assertEquals(tortas.calcularValorVenda(), 12);
 	}
 	
 	@Test
 	void testaMedidaInvalida() {
 		//try {
-			Tortas tortas = new Tortas("Fatia", "Fatia de Torta de Brigadeiro", 7);
-			tortas.setTipo("Fatia");
+			Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
+			tortas.setTipo("M");
 			tortas.setSabor("Brigadeiro");
 			
 		//} catch (MedidaInvalidaException e) {
@@ -45,11 +45,11 @@ public class TortasTeste {
 	@Test
 	//void testaObterValorPorProduto() throws MedidaInvalidaException {
 	void testaObterValorPorProduto() {
-		Tortas tortas = new Tortas("Fatia", "Fatia de Torta de Brigadeiro", 7);
-		tortas.setTipo("Fatia");
+		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
+		tortas.setTipo("M");
 		tortas.setSabor("Brigadeiro");
 		
-		String result = "Fatia;7.0\r";
+		String result = "Tortinha;12.0\r";
 		
 		assertEquals(tortas.obterValorPorProduto(), result);
 	}
