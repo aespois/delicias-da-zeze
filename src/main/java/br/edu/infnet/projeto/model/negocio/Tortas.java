@@ -24,13 +24,7 @@ public class Tortas extends Produto {
 
 	@Override
 	public float calcularValorVenda() {
-		if (this.getTipo() == "Fatia") { // sem adição de valor
-			return this.getValorUnitario();
-		} else if (this.getTipo() == "Tortinha") { // + R$ 5
-			return this.getValorUnitario() + 5.02f;
-		} else { // + R$ 50
-			return this.getValorUnitario() + 10.02f;
-		}
+		//
 	}
 
 	public String getTipo() {
