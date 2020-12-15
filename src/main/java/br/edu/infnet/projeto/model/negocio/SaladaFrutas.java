@@ -1,8 +1,10 @@
 package br.edu.infnet.projeto.model.negocio;
 
+import br.edu.infnet.projeto.model.exception.ComplementoInvalidoException;
+
 public class SaladaFrutas extends Produto {
 	private boolean mel; // S ou N
-	private String retirarFruta; // banana, uva, manga, morango, mamão
+	private String complemento; // obrigatório
 	
 	public SaladaFrutas(String nome, String descricao, float valorUnitario) {
 		super(nome, descricao, valorUnitario);
@@ -15,7 +17,7 @@ public class SaladaFrutas extends Produto {
 		sb.append(";");
 		sb.append(this.isMel());
 		sb.append(";");
-		sb.append(this.getRetirarFruta());
+		sb.append(this.getComplemento());
 		
 		return sb.toString();
 	}
@@ -33,11 +35,14 @@ public class SaladaFrutas extends Produto {
 		this.mel = mel;
 	}
 	
-	public String getRetirarFruta() {
-		return retirarFruta;
+	public String getComplemento() {
+		return complemento;
 	}
 	
-	public void setRetirarFruta(String retirarFruta) {
-		this.retirarFruta = retirarFruta;
+	public void setComplemento(String complemento) throws ComplementoInvalidoException {
+		if(complemento == null) {
+			throw new ComplementoInvalidoException("Complemento obrigatório");
+		}	
+		this.complemento = complemento;
 	}
 }
