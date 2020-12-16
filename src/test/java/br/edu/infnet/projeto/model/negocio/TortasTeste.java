@@ -29,18 +29,6 @@ public class TortasTeste {
 	}
 	
 	@Test
-	void testaTipoInvalido() {
-		try {
-			Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
-			tortas.setTipo("Médio");
-			tortas.setSabor("Brigadeiro");
-			
-		} catch (TipoInvalidoException e) {
-			assertEquals("Tipo Inválido", e.getMessage());
-		}
-	}
-	
-	@Test
 	void testaObterValorPorProduto() throws TipoInvalidoException {
 		Tortas tortas = new Tortas("Tortinha", "Torta pequena de Brigadeiro", 7);
 		tortas.setTipo("M");

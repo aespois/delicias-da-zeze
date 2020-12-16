@@ -1,6 +1,7 @@
 package br.edu.infnet.projeto.model.negocio;
 
 import br.edu.infnet.projeto.model.exception.TamanhoInvalidoException;
+import br.edu.infnet.projeto.model.exception.TipoInvalidoException;
 
 public class Empadas extends Produto {
 	private String tamanho; // P, M ou G
@@ -38,7 +39,7 @@ public class Empadas extends Produto {
 	}
 	
 	public void setTamanho(String tamanho) throws TamanhoInvalidoException {
-		if(tamanho.length() > 1) {
+		if (!tamanho.equalsIgnoreCase("P") && !tamanho.equalsIgnoreCase("M") && !tamanho.equalsIgnoreCase("G")) {
 			throw new TamanhoInvalidoException("Tamanho Inválido");
 		}
 		this.tamanho = tamanho;

@@ -43,12 +43,13 @@ public class Tortas extends Produto {
 	}
 	
 	public void setTipo(String tipo) throws TipoInvalidoException {
-		if(tipo.length() > 1) {
+		
+		if (!tipo.equalsIgnoreCase("P") && !tipo.equalsIgnoreCase("M") && !tipo.equalsIgnoreCase("G")) {
 			throw new TipoInvalidoException("Tipo Inválido");
 		}
-		this.tipo = tipo;
+		this.tipo = tipo;		
 	}
-	
+
 	public String getSabor() {
 		return sabor;
 	}
