@@ -9,11 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.edu.infnet.projeto.model.exception.TamanhoInvalidoException;
 
 @SpringBootTest
-public class EmpadasTeste {
+public class EmpadaTeste {
 
 	@Test
 	void testaInstanciaToString() throws TamanhoInvalidoException {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+		Empada empadas = new Empada("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		
@@ -22,7 +22,7 @@ public class EmpadasTeste {
 	
 	@Test
 	void testaCalculoValor() throws TamanhoInvalidoException {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+		Empada empadas = new Empada("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		
@@ -32,7 +32,7 @@ public class EmpadasTeste {
 	@Test
 	void testaTamanhoInvalido() {
 		try {
-			Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+			Empada empadas = new Empada("Empadão", "Empadão com recheio de frango", 5);
 			empadas.setTamanho("Grande");
 			empadas.setRecheio("Frango");
 		} catch (TamanhoInvalidoException e) {
@@ -42,7 +42,7 @@ public class EmpadasTeste {
 	
 	@Test
 	void testaObterValorPorProduto() throws TamanhoInvalidoException {
-		Empadas empadas = new Empadas("Empadão", "Empadão com recheio de frango", 5);
+		Empada empadas = new Empada("Empadão", "Empadão com recheio de frango", 5);
 		empadas.setTamanho("G");
 		empadas.setRecheio("Frango");
 		

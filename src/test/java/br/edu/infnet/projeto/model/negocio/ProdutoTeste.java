@@ -10,27 +10,27 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ProdutoTeste { 
 	@Test
 	void testaEmpadas() {
-		Empadas empadas = null;
+		Empada empadas = null;
 		
-		empadas = new Empadas("Empadão", "Empadão com recheio de frango", 15); 
+		empadas = new Empada("Empadão", "Empadão com recheio de frango", 15); 
 		
 		assertNotNull(empadas);
 	}
 	
 	@Test
 	void testaSaladaFrutas() {
-		SaladaFrutas saladaFrutas = null;
+		SaladaFruta saladaFrutas = null;
 		
-		saladaFrutas = new SaladaFrutas("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
+		saladaFrutas = new SaladaFruta("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
 		
 		assertNotNull(saladaFrutas);
 	}
 	
 	@Test
 	void testaTortas() {
-		Tortas tortas = null;
+		Torta tortas = null;
 		
-		tortas = new Tortas("Fatia", "Fatia de Torta de Brigadeiro", 7);
+		tortas = new Torta("Fatia", "Fatia de Torta de Brigadeiro", 7);
 		
 		assertNotNull(tortas);
 	}

@@ -9,11 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.edu.infnet.projeto.model.exception.ComplementoInvalidoException;
 
 @SpringBootTest
-public class SaladaFrutasTeste {
+public class SaladaFrutaTeste {
 	
 	@Test
 	void testaInstanciaToString() throws ComplementoInvalidoException{
-		SaladaFrutas saladaFrutas = new SaladaFrutas("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
+		SaladaFruta saladaFrutas = new SaladaFruta("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
 		saladaFrutas.setMel(Boolean.TRUE);
 		saladaFrutas.setComplemento("Banana");
 		
@@ -22,7 +22,7 @@ public class SaladaFrutasTeste {
 	
 	@Test
 	void testaCalculoValor() throws ComplementoInvalidoException {
-		SaladaFrutas saladaFrutas = new SaladaFrutas("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
+		SaladaFruta saladaFrutas = new SaladaFruta("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
 		saladaFrutas.setMel(Boolean.TRUE);
 		saladaFrutas.setComplemento("Banana");
 		
@@ -31,7 +31,7 @@ public class SaladaFrutasTeste {
 	
 	@Test
 	void testaObterValorPorProduto() throws ComplementoInvalidoException {
-		SaladaFrutas saladaFrutas = new SaladaFrutas("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
+		SaladaFruta saladaFrutas = new SaladaFruta("Salada de Frutas", "Frutas selecionadas: banana, uva, manga, morango, mamão", 5);
 		saladaFrutas.setMel(Boolean.TRUE);
 		saladaFrutas.setComplemento("Banana");
 		

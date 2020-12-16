@@ -1,13 +1,15 @@
 package br.edu.infnet.projeto.model.negocio;
 
+import java.util.Arrays;
+
 import br.edu.infnet.projeto.model.exception.TamanhoInvalidoException;
 import br.edu.infnet.projeto.model.exception.TipoInvalidoException;
 
-public class Empadas extends Produto {
+public class Empada extends Produto {
 	private String tamanho; // P, M ou G
 	private String recheio; // frango, frango com catupiry e de camarão
 	
-	public Empadas(String nome, String descricao, float valorUnitario) {
+	public Empada(String nome, String descricao, float valorUnitario) {
 		super(nome, descricao, valorUnitario);
 	}
 	
@@ -25,13 +27,20 @@ public class Empadas extends Produto {
 
 	@Override
 	public float calcularValorVenda() { 
-		if (this.getTamanho() == "P") { // sem adição de valor
-			return this.getValorUnitario();
-		} else if (this.getTamanho() == "M") { // + R$ 5
-			return this.getValorUnitario() + 5.0f;
-		} else { // + R$ 10
-			return this.getValorUnitario() + 10.0f;
-		}
+		String[] tamanhoEmpada = {"P", "M", "G"};
+		float valorVenda = 0;
+		
+		if(Arrays.asList(tamanhoEmpada).contains(this.getTamanho())) {
+			switch (this.getTamanho()) {
+			case "P":
+				valorVenda =  this.getValorUnitario();
+			case "M":
+				valorVenda =  this.getValorUnitario() + 5.0f;
+			case "G":
+				valorVenda = this.getValorUnitario() + 10.0f;
+			}		
+		} 
+		return valorVenda;
 	}
 
 	public String getTamanho() {

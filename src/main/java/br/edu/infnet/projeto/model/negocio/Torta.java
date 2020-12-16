@@ -1,12 +1,14 @@
 package br.edu.infnet.projeto.model.negocio;
 
+import java.util.Arrays;
+
 import br.edu.infnet.projeto.model.exception.TipoInvalidoException;
 
-public class Tortas extends Produto {
-	private String tipo; // Fatia=P, Tortinha=M ou Torta=G
+public class Torta extends Produto {
+	private String tipo; // Fatia, Tortinha ou Torta
 	private String sabor; // brigadeiro, chocolate a 4 leites, chocolate com amendoim, chocolate com doce de leite, abacaxi com côco, doce de leite com ameixa, morango
 	
-	public Tortas(String nome, String descricao, float valorUnitario) {
+	public Torta(String nome, String descricao, float valorUnitario) {
 		super(nome, descricao, valorUnitario);
 	}
 	
@@ -24,18 +26,20 @@ public class Tortas extends Produto {
 
 	@Override
 	public float calcularValorVenda() {
-		if (this.getTipo() == "P") { 
-			// sem adição de valor
-			return this.getValorUnitario();
-			
-		} else if (this.getTipo() == "M") { 
-			// + R$ 5
-			return this.getValorUnitario() + 5.0f;
-			
-		} else { 
-			// + R$ 50
-			return this.getValorUnitario() + 10.0f;
-		}
+		String[] tipoTorta = {"Fatia", "Tortinha", "Torta"};
+		float valorVenda = 0;
+		
+		if(Arrays.asList(tipoTorta).contains(this.getTipo())) {
+			switch (this.getTipo()) {
+			case "Fatia":
+				valorVenda =  this.getValorUnitario();
+			case "Tortinha":
+				valorVenda =  this.getValorUnitario() + 5.0f;
+			case "Torta":
+				valorVenda = this.getValorUnitario() + 10.0f;
+			}		
+		} 
+		return valorVenda;
 	}
 
 	public String getTipo() {
@@ -44,7 +48,7 @@ public class Tortas extends Produto {
 	
 	public void setTipo(String tipo) throws TipoInvalidoException {
 		
-		if (!tipo.equalsIgnoreCase("P") && !tipo.equalsIgnoreCase("M") && !tipo.equalsIgnoreCase("G")) {
+		if (!tipo.equalsIgnoreCase("Fatia") && !tipo.equalsIgnoreCase("Tortinha") && !tipo.equalsIgnoreCase("Torta")) {
 			throw new TipoInvalidoException("Tipo Inválido");
 		}
 		this.tipo = tipo;		

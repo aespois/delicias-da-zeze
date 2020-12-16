@@ -2,11 +2,11 @@ package br.edu.infnet.projeto.model.negocio;
 
 import br.edu.infnet.projeto.model.exception.ComplementoInvalidoException;
 
-public class SaladaFrutas extends Produto {
+public class SaladaFruta extends Produto {
 	private boolean mel; // S ou N
 	private String complemento; // obrigatório
 	
-	public SaladaFrutas(String nome, String descricao, float valorUnitario) {
+	public SaladaFruta(String nome, String descricao, float valorUnitario) {
 		super(nome, descricao, valorUnitario);
 	}
 	
