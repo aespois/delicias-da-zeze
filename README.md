@@ -1,4 +1,6 @@
 # Delícias da Zezé
+Projeto: Desenvolvimento Web com Java EE
+
 Sistema de Controle de Pedidos da empresa Delícias da Zezé
 
 - Classes: drive.google.com/file/d/1R3I2kTlWmz8NB1EOz3FW2fFBdW2pybJH
